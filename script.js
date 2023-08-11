@@ -22,13 +22,13 @@ function calcAndSetAge() {
         document.querySelector(".res-days").text = res_years.getUTCDate() - 1;
     }else{
 
-        if (now_date < birthdate) showErr("all", "Must be a valid date");
+        if (now_date < birthdate) showErr("all", "Must be in the past");
         if (day_str == '') showErr("day", "This field is required");
         else if (isNaN(day) || day != new Date(1, 1, day).getDate()) showErr("day", "Must be a valid date");
         if (month_str  == '') showErr("month", "This field is required");
-        else if (isNaN(month) || month != new Date(1, month, 1).getMonth()) showErr("month", "Must be a valid date");
+        else if (isNaN(month) || month != new Date(1, month, 1).getMonth()) showErr("month", "Must be a valid month");
         if (year_str == '') showErr("year", "This field is required");
-        else if (isNaN(year) || year != new Date(year, 1, 1).getFullYear()) showErr("year", "Must be a valid date");
+        else if (isNaN(year) || year != new Date(year, 1, 1).getFullYear()) showErr("year", "Must be a valid year");
         
         clearOutputs();
     }
